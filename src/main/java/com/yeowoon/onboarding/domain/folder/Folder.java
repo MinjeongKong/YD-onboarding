@@ -28,4 +28,12 @@ public class Folder {
 
     @OneToMany(mappedBy = "folder")
     private List<Post> posts = new ArrayList<>();
+
+    public Folder(String title) {
+        this.title = title;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
 }

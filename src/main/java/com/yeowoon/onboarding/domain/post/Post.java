@@ -26,4 +26,16 @@ public class Post {
     @ManyToOne
     @JoinColumn(name = "FOLDER_ID")
     private Folder folder;
+
+    public Post(String title) {
+        this.title = title;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
+    public void setFolder(Folder folder) {
+        this.folder = folder;
+    }
 }

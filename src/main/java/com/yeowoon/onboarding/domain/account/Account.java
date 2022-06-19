@@ -21,4 +21,8 @@ public class Account {
 
     @OneToOne(mappedBy = "account")
     private Folder folder;
+
+    public Account(String name) {
+        this.name = name;
+    }
 }
