@@ -22,7 +22,7 @@ public class Folder {
     @Column(name = "TITLE")
     private String title;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "ACCOUNT_ID")
     private Account account;
 

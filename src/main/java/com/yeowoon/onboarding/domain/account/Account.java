@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -19,8 +21,8 @@ public class Account {
     @Column(name = "NAME")
     private String name;
 
-    @OneToOne(mappedBy = "account")
-    private Folder folder;
+    @OneToMany(mappedBy = "account")
+    private List<Folder> folders = new ArrayList<>();
 
     public Account(String name) {
         this.name = name;

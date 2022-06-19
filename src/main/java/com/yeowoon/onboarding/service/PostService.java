@@ -26,14 +26,13 @@ public class PostService {
 
         if(!folder.getAccount().getId().equals(accountId)){
             return new ResponseDto("FAIL");
-        }else{
-            Post post = requestDto.toEntity();
-            post.setAccount(folder.getAccount());
-            post.setFolder(folder);
-
-            postRepository.save(post);
-            PostResponseDto responseDto = new PostResponseDto(post);
-            return new ResponseDto("SUCCESS", responseDto);
         }
+        Post post = requestDto.toEntity();
+        post.setAccount(folder.getAccount());
+        post.setFolder(folder);
+
+        postRepository.save(post);
+        PostResponseDto responseDto = new PostResponseDto(post);
+        return new ResponseDto("SUCCESS", responseDto);
     }
 }
